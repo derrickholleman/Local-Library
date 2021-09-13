@@ -25,17 +25,11 @@ function partitionBooksByBorrowedStatus(books) {
 
 function getBorrowersForBook(book, accounts) {
   const borrowers = []
-  
-  // get all accounts that have checked out a specified book
-  // return account object that has RETURNED status included
-  
-  // loop through book borrows
+
   book.borrows.forEach((user) => {
-    // check for accounts that have checked out that book
     accounts.filter((account) => {
-      // if id in books array matches an account id
       if (user.id === account.id) {
-        // set returned status for account object
+
         account.returned = user.returned
         borrowers.push(account)
       }
@@ -43,7 +37,6 @@ function getBorrowersForBook(book, accounts) {
   })
   
   return borrowers.slice(0, 10)
-  
 }
 
 module.exports = {

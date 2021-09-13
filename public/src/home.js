@@ -1,5 +1,6 @@
 function getTotalBooksCount(books) {
-  return books.length
+  let allBooks = books.map((book) => book)
+  return allBooks.length
 }
 
 function getTotalAccountsCount(accounts) {
@@ -56,7 +57,7 @@ function getMostPopularBooks(books) {
 }
 
 function getMostPopularAuthors(books, authors) {
-  // reduce authors array to format object in correct format
+
   let allAuthors = authors.reduce((acc, author) => {
     const { id, name: {first, last} } = author;
 
